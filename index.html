@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xarakter Tipini Aniqlash Testi (Karl Yung)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl w-full max-w-xl p-6 md:p-8 text-white">
+        
+        <!-- Boshlang'ich ekran -->
+        <div id="start-screen" class="text-center">
+            <div class="mb-4">
+                <span class="bg-indigo-500/30 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-500/30">Psixologik Metodika</span>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold mb-4">Xarakter Tipini Aniqlash Методикаси</h1>
+            <p class="text-gray-300 text-sm md:text-base mb-2">Muallif: Karl Yung</p>
+            <p class="text-gray-400 text-xs md:text-sm mb-8 leading-relaxed">
+                Test 20 ta savoldan iborat. Savollarga bergan javoblaringiz asosida Ekstroversiya, Ambiversiya yoki Introversiya darajangiz aniqlanadi.
+            </p>
+            <button onclick="startQuiz()" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-lg shadow-indigo-500/30">
+                Testni boshlash
+            </button>
+        </div>
+
+        <!-- Savollar ekrani -->
+        <div id="quiz-screen" class="hidden">
+            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                <span id="question-counter" class="text-xs font-medium text-indigo-300 uppercase tracking-wider">Savol 1 / 20</span>
+                <span id="progress-text" class="text-xs font-semibold bg-white/10 px-3 py-1 rounded-full">0%</span>
+            </div>
+            
+            <h2 id="question-text" class="text-lg md:text-xl font-semibold mb-6 leading-snug"></h2>
+            
+            <div id="options-container" class="space-y-3">
+                <!-- Variantlar JavaScript orqali chiqadi -->
+            </div>
+        </div>
+
+        <!-- Natija ekrani -->
+        <div id="result-screen" class="hidden text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-full mb-4 shadow-lg text-2xl">
+                📊
+            </div>
+            <h2 class="text-2xl font-bold mb-2">Test Yakunlandi!</h2>
+            <p class="text-gray-300 text-sm mb-4">Sizning umumiy balingiz: <span id="score-text" class="font-bold text-indigo-300 text-lg">0</span> / 100 ball</p>
+            
+            <div class="bg-white/5 border border-white/10 p-5 rounded-xl mb-6 text-left">
+                <h3 id="result-title" class="text-xl font-bold text-indigo-300 mb-2"></h3>
+                <p id="result-desc" class="text-gray-200 text-sm leading-relaxed"></p>
+            </div>
+
+            <button onclick="restartQuiz()" class="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-3 px-6 rounded-xl transition duration-300">
+                Qaytadan topshirish
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
